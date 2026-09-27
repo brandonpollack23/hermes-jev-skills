@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **`jev models suggest --provider X` builds pools from that provider only.** The flag was accepted by `suggest` but applied only to `list`, so the pools still mixed every available provider.
+
 - GUI daily-use guard and live smoke: planned AX click/type steps now read back state before proceeding, stopping as `action_unverified` after one bounded settle when a driver acknowledgement leaves the window unchanged. A standalone macOS AppKit fixture smoke exercises the **bundled** Jev+Cua runner twice, with process cleanup and one activation/title-transition assertion per run. Fixture success does not establish Epic Launcher custom UI support; Epic navigation remains unverified.
 
 - GUI runner: exclude the global macOS menu and its descendants from app-navigation candidates. A chrome-only Epic Games Launcher AX snapshot previously offered `Epic Games Launcher` as a clickable menu item; Jev chose it with 0.91 confidence and Cua Driver refused it as outside the target window. The runner now stops without acting. Regression tests cover the actual window/menu ancestry shape. This does not resolve Cua Driver pixel clicks that reach the right Epic sidebar location but leave the page unchanged; those remain unverified and must not be reported as navigation.
